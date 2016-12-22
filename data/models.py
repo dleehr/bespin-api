@@ -34,6 +34,9 @@ class Workflow(models.Model):
     def __unicode__(self):
         return self.name
 
+    class JSONAPIMeta:
+        resource_name = 'workflows'
+
 
 class WorkflowVersion(models.Model):
     """
@@ -50,6 +53,9 @@ class WorkflowVersion(models.Model):
 
     def __unicode__(self):
         return '{} version: {} created: {}'.format(self.workflow.name, self.version, self.created)
+
+    class JSONAPIMeta:
+        resource_name = 'workflow-versions'
 
 
 class Job(models.Model):
@@ -107,6 +113,9 @@ class Job(models.Model):
         if self.workflow_version:
             workflow_name = self.workflow_version.workflow
         return '{} ({}) for user {}'.format(workflow_name, self.get_state_display(), self.user)
+
+    class JSONAPIMeta:
+        resource_name = 'jobs'
 
 
 class JobOutputDir(models.Model):

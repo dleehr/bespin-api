@@ -16,7 +16,6 @@ from lando import LandoJob
 class ProjectsViewSet(viewsets.ViewSet):
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = DDSProjectSerializer
-    resource_name = 'projects'
 
     def list(self, request):
         try:
