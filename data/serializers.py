@@ -1,4 +1,4 @@
-from rest_framework import serializers
+from rest_framework_json_api import serializers
 from data.models import Workflow, WorkflowVersion, Job, JobInputFile, DDSJobInputFile, \
     DDSEndpoint, DDSUserCredential, JobOutputDir, URLJobInputFile, JobError
 
