@@ -8,11 +8,15 @@ from data.models import Workflow, WorkflowVersion, Job, JobInputFile, DDSJobInpu
 from data.serializers import *
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.decorators import detail_route
+from rest_framework.exceptions import ValidationError
 from lando import LandoJob
 from django.db.models import Q
 from django.db import transaction
 from jobfactory import create_job_factory
 
+
+# Ember expects validation error responses to be 422, not 400
+ValidationError.status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
 
 class DDSViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (permissions.IsAuthenticated,)

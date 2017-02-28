@@ -132,6 +132,7 @@ STATICFILES_DIRS = [
 CORS_ORIGIN_WHITELIST = (
     'localhost:4200',
     '127.0.0.1:4200',
+    '10.109.253.24',
 )
 
 REST_FRAMEWORK = {
