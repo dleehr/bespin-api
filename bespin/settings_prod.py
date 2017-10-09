@@ -32,12 +32,6 @@ DATABASES = {
     }
 }
 
-
-# So that pages served by ember development server are listed as OK to access this API
-CORS_ORIGIN_WHITELIST = (
-    os.getenv('BESPIN_CORS_HOST'),
-)
-
 STATIC_ROOT=os.getenv('BESPIN_STATIC_ROOT')
 
 #SECURE_SSL_REDIRECT = True
