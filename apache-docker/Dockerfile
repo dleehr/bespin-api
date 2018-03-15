@@ -25,6 +25,7 @@ RUN a2ensite bespin-web
 RUN a2dissite 000-default
 RUN a2enmod rewrite
 RUN a2enmod ssl
+RUN a2disconf other-vhosts-access-log
 
 COPY scripts /scripts
 
