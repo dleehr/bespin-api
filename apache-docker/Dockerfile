@@ -19,6 +19,8 @@ RUN mkdir -p ${BESPIN_STATIC_ROOT}
 RUN BESPIN_SECRET_KEY=DUMMY python manage.py collectstatic --noinput
 
 COPY bespin-web.conf /etc/apache2/sites-available/
+COPY ports.conf /etc/apache2/ports.conf
+
 RUN a2ensite bespin-web
 RUN a2dissite 000-default
 RUN a2enmod rewrite
