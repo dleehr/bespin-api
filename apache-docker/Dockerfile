@@ -31,8 +31,8 @@ COPY scripts /scripts
 VOLUME /srv/ui
 COPY index.html /srv/ui/index.html
 
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8080
+EXPOSE 8443
 
 # Add /scripts to the PATH
 ENV PATH ${PATH}:/scripts/
