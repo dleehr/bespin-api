@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 from bespin.settings_base import *
-import dj_database_url
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '+u!*o@^1!elg34r5u$z4xgq(_yq@fqw!d^4p6y*zh_o1buifsa'
@@ -21,22 +20,6 @@ SECRET_KEY = '+u!*o@^1!elg34r5u$z4xgq(_yq@fqw!d^4p6y*zh_o1buifsa'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
-# Database
-# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'ATOMIC_REQUESTS': True,
-    }
-}
-# Update database configuration from $DATABASE_URL if set
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
-
 
 # So that pages served by ember development server are listed as OK to access this API
 CORS_ORIGIN_WHITELIST = (
