@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -eo pipefail
+
+pip install --upgrade pip setuptools wheel
+
+/usr/libexec/s2i/assemble
