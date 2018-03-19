@@ -19,20 +19,6 @@ SECRET_KEY = os.getenv('BESPIN_SECRET_KEY')
 ALLOWED_HOSTS = [os.getenv('BESPIN_ALLOWED_HOST')]
 
 
-# Database
-# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': os.getenv('BESPIN_DB_NAME'),
-       'USER': os.getenv('BESPIN_DB_USER'),
-       'PASSWORD': os.getenv('BESPIN_DB_PASSWORD'),
-       'HOST': os.getenv('BESPIN_DB_HOST'),
-    }
-}
-
-STATIC_ROOT=os.getenv('BESPIN_STATIC_ROOT')
 
 #SECURE_SSL_REDIRECT = True
 #SESSION_COOKIE_SECURE = True
