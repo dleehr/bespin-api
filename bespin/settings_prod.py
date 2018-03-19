@@ -16,9 +16,7 @@ from bespin.settings_base import *
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('BESPIN_SECRET_KEY')
 
-ALLOWED_HOSTS = [os.getenv('BESPIN_ALLOWED_HOST')]
-
-
+ALLOWED_HOSTS = ['*',]
 
 #SECURE_SSL_REDIRECT = True
 #SESSION_COOKIE_SECURE = True
