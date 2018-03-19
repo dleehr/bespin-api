@@ -5,5 +5,6 @@ export BESPIN_SECRET_KEY=dummy-prod-key
 export DJANGO_SETTINGS_MODULE=bespin.settings_prod
 
 python manage.py migrate
-gunicorn -b 0.0.0.0:8000 bespin.wsgi:application
+python manage.py collectstatic
+gunicorn -b 0.0.0.0:8000 bespin.wsgi:application --log-level=debug
 
