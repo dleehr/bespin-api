@@ -21,7 +21,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Update database configuration from DATABASE_URL
-DATABASES = {'default': dj_database_url.config() }
+if 'DATABASE_URL' in os.environ:
+  DATABASES = {'default': dj_database_url.config() }
+else:
+  DATABASES = {
+    'default': {
+      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+      'NAME': os.getenv('POSTGRESQL_DATABASE'),
+      'USER': os.getenv('POSTGRESQL_USER'),
+      'PASSWORD': os.getenv('POSTGRESQL_PASSWORD'),
+      'HOST': os.getenv('POSTGRESQL_HOST'),
+    }
+  }
 
 # Application definition
 
