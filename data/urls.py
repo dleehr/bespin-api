@@ -21,6 +21,7 @@ router.register(r'job-activities', api.JobActivityViewSet, 'jobactivity')
 router.register(r'share-groups', api.ShareGroupViewSet, 'sharegroup')
 router.register(r'workflow-methods-documents', api.WorkflowMethodsDocumentViewSet, 'workflowmethodsdocument')
 router.register(r'users', api.UserViewSet, 'user')
+router.register(r'new-route', api.UserViewSet, 'newroute')
 
 # Routes that require admin user
 router.register(r'admin/jobs', api.AdminJobsViewSet, 'admin_job')
